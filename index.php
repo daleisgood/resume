@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -13,4 +14,15 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-require 'webroot' . DIRECTORY_SEPARATOR . 'index.php';
+// Enable error reporting for development
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Define the application root
+define('ROOT', dirname(__DIR__));
+
+// Define the path to the webroot directory
+define('WEBROOT', ROOT . DIRECTORY_SEPARATOR . 'webroot');
+
+// Load the CakePHP bootstrap file
+require WEBROOT . DIRECTORY_SEPARATOR . 'index.php';
